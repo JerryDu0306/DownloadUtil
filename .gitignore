@@ -1,3 +1,12 @@
+*.iml
+.gradle
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
+.DS_Store
 /build
-gradle.properties
-downloadutil.iml
+/captures
+/app/build
+/downloadutil/build
+/downloadutil/gradle.properties
+
