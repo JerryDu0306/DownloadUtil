@@ -12,7 +12,10 @@ DownloadUtil mUtil;
  	mUtil = new DownloadUtile();
  }
  
-private void download(){
+ /**
+  * 开始下载和恢复下载都是这个..
+  */
+  private void download(){
 	mUtil.download(this, mDownloadUrl, Environment.getExternalStorageDirectory().getPath() + "/test.apk"
                 , new DownloadListener() {
                     long fileSize = 1;
@@ -20,63 +23,85 @@ private void download(){
                     @Override
                     public void onPreDownload(HttpURLConnection connection) {
                         super.onPreDownload(connection);
-                        mPb.setMax(100);
+                        //在这里编写下载预处理操作
                         fileSize = connection.getContentLength();
-                        mUpdateHandler.obtainMessage(DOWNLOAD_PRE, fileSize).sendToTarget();
                     }
 
                     @Override
                     public void onStart(long startLocation) {
                         super.onStart(startLocation);
+                        //在这里编写开始后的相应操作
                     }
 
                     @Override
                     public void onChildResume(long resumeLocation) {
                         super.onChildResume(resumeLocation);
+                        //子线程恢复下载的位置回调
                     }
 
                     @Override
                     public void onChildComplete(long finishLocation) {
                         super.onChildComplete(finishLocation);
+                        //子线程完成下载的回调
                     }
 
                     @Override
                     public void onProgress(long currentLocation) {
                         super.onProgress(currentLocation);
-                        mPb.setProgress((int) (currentLocation * 100 / fileSize));
+                        //下载总进度回调
                     }
 
                     @Override
                     public void onStop(long stopLocation) {
                         super.onStop(stopLocation);
-                        mUpdateHandler.obtainMessage(DOWNLOAD_STOP).sendToTarget();
+                        //停止下载的回调
                     }
 
                     @Override
                     public void onCancel() {
                         super.onCancel();
-                        mUpdateHandler.obtainMessage(DOWNLOAD_CANCEL).sendToTarget();
+                       //取消下载回调
                     }
 
                     @Override
                     public void onResume(long resumeLocation) {
                         super.onResume(resumeLocation);
-                        mUpdateHandler.obtainMessage(DOWNLOAD_RESUME, resumeLocation).sendToTarget();
+                       	//恢复下载回调
                     }
 
                     @Override
                     public void onFail() {
                         super.onFail();
-                        mUpdateHandler.obtainMessage(DOWNLOAD_FAILE).sendToTarget();
+                        //下载失败回调
                     }
 
                     @Override
                     public void onComplete() {
                         super.onComplete();
-                        mUpdateHandler.obtainMessage(DOWNLOAD_COMPLETE).sendToTarget();
+                        //下载完成回调
                     }
                 });
-}
+       
+ }
+ 
+ /**
+  * 停止下载
+  */
+  private void stopDownload(){
+  	if(mUtil != null){
+  		mUtil.stopDownload();
+  	}
+  }
+  
+   /**
+  * 取消下载
+  */
+  private void cancelDownload(){
+  	if(mUtil != null){
+  		mUtil.cancelDownload();
+  	}
+  }
+  
 ```
 
 
