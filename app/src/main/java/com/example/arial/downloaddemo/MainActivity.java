@@ -118,6 +118,21 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                     @Override
+                    public void onStart(long startLocation) {
+                        super.onStart(startLocation);
+                    }
+
+                    @Override
+                    public void onChildResume(long resumeLocation) {
+                        super.onChildResume(resumeLocation);
+                    }
+
+                    @Override
+                    public void onChildComplete(long finishLocation) {
+                        super.onChildComplete(finishLocation);
+                    }
+
+                    @Override
                     public void onProgress(long currentLocation) {
                         super.onProgress(currentLocation);
                         mPb.setProgress((int) (currentLocation * 100 / fileSize));
