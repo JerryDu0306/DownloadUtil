@@ -1,6 +1,10 @@
 # DownloadUtil
 这是android 文件下载工具类，实现了多线程断点续传功能
 
+#下载
+[![Download](https://api.bintray.com/packages/arialyy/maven/MTDownloadUtil/images/download.svg)](https://bintray.com/arialyy/maven/MTDownloadUtil/_latestVersion)<br/>
+compile 'com.arialyy.downloadutil:DownloadUtil:1.0.0'
+
 #使用
 ```java
 DownloadUtil mUtil;
@@ -108,7 +112,6 @@ DownloadUtil mUtil;
 #示例
 ![例子图](https://github.com/AriaLyy/DownloadUtil/blob/master/img/11.gif "")
 
-#下载
 
 License
 -------
