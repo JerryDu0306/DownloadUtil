@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private static final int DOWNLOAD_RESUME = 0x05;
     private static final int DOWNLOAD_COMPLETE = 0x06;
     private ProgressBar mPb;
-    private String mDownloadUrl = "http://static.gaoshouyou.com/d/22/94/822260b849944492caadd2983f9bb624.apk";
+    private String mDownloadUrl = "http://static.gaoshouyou.com/d/12/0d/7f120f50c80d2e7b8c4ba24ece4f9cdd.apk";
     private DownLoadUtil mUtil;
     private Button mStart, mStop, mCancel;
     private TextView mSize;

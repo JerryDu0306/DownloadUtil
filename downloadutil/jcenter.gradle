@@ -120,7 +120,7 @@ bintray {
     user = hasProperty("bintrayUser") ? getProperty("bintrayUser") : getProperty("BINTRAY_USER")
     key = hasProperty("bintrayKey") ? getProperty("bintrayKey") : getProperty("BINTRAY_KEY")
 
-//    configurations = ['archives']
+    configurations = ['archives']
     publications = ['mavenJava']
     publish = true
 
