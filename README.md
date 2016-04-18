@@ -1,5 +1,6 @@
 # DownloadUtil
-这是android 文件下载工具类，实现了多线程断点续传功能
+这是android 文件下载工具类，实现了多线程断点续传功能</br>
+如果你觉得我的代码对你有帮助，请麻烦你在右上角给我一个star.^_^
 
 #下载
 [![Download](https://api.bintray.com/packages/arialyy/maven/MTDownloadUtil/images/download.svg)](https://bintray.com/arialyy/maven/MTDownloadUtil/_latestVersion)<br/>
